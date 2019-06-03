@@ -27,10 +27,16 @@
       <Name>PYTHONIOENCODING</Name>
       <Mode/>
     </Variable>
+	<Variable>
+	    <Value>192.168.1.4</Value>
+	    <Name>IP</Name>
+	    <Mode/>
+	</Variable>
   </Environment>
-	<Network>bridge</Network>
+	<Network>br0</Network>
+	<MyIP></MyIP>
 	<Networking>
-		<Mode>custom</Mode>
+		<Mode>br0</Mode>
 		<Publish>
 			<Port>
 				<HostPort>80</HostPort>
@@ -76,4 +82,5 @@
 	<Config Name="CACHE_MEM_SIZE" Target="CACHE_MEM_SIZE" Default="500m" Mode="" Description="Memory size for the cache" Type="Variable" Display="advanced" Required="true" Mask="false">500m</Config>
 	<Config Name="CACHE_DISK_SIZE" Target="CACHE_DISK_SIZE" Default="500g" Mode="" Description="Max size for the cache" Type="Variable" Display="advanced" Required="true" Mask="false">500g</Config>
 	<Config Name="CACHE_MAX_AGE" Target="CACHE_MAX_AGE" Default="3650d" Mode="" Description="Max age for files in the cache" Type="Variable" Display="advanced" Required="true" Mask="false">3650d</Config>
- </Container>
+	<Config Name="IP" Target="IP" Default="" Mode="" Description="Container Variable: IP" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.4</Config> 
+</Container>
