@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+<TemplateURL>https://raw.githubusercontent.com/mbkinnovo/docker-templates/master/lancache-monolithic.xml</TemplateURL>
+  <Beta>True</Beta>
+  <Category>Backup: Other</Category>
+  <Date>2019-06-03</Date>
+  <Name>monolithic</Name>
+  <Project>https://github.com/lancachenet/monolithic</Project>
+  <Support></Support>
+  <Description></Description>
+  <Overview></Overview>
+  <Registry>https://hub.docker.com/r/steamcache/monolithic/~/dockerfile/</Registry>
+  <Repository>lancachenet/monolithic</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+ <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+   <Variable>
+      <Value>UTF-8</Value>
+      <Name>PYTHONIOENCODING</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+	<Network>bridge</Network>
+	<Networking>
+		<Mode>bridge</Mode>
+		<Publish>
+			<Port>
+				<HostPort>80</HostPort>
+				<ContainerPort>80</ContainerPort>
+				<Protocol>tcp</Protocol>
+			</Port>
+		</Publish>
+	</Networking>
+	<Environment>
+		<Variable>
+			<Value>500m</Value>
+			<Name>CACHE_MEM_SIZE</Name>
+			<Mode/>
+		</Variable>
+		<Variable>
+			<Value>500g</Value>
+			<Name>CACHE_DISK_SIZE</Name>
+			<Mode/>
+		</Variable>
+		<Variable>
+			<Value>3650d</Value>
+			<Name>CACHE_MAX_AGE</Name>
+			<Mode/>
+		</Variable>
+	</Environment>
+	<Data>
+		<Volume>
+			<HostDir>/mnt/user/appdata/gen-cache/data</HostDir>
+			<ContainerDir>/data/cache</ContainerDir>
+			<Mode>rw</Mode>
+		</Volume>
+		<Volume>
+			<HostDir>/mnt/user/appdata/gen-cache/logs</HostDir>
+			<ContainerDir>/data/logs</ContainerDir>
+			<Mode>rw</Mode>
+		</Volume>
+	</Data>
+	<WebUI/>
+	<Icon>https://raw.githubusercontent.com/cheesemarathon/docker-templates/master/images/steamcache.png</Icon>
+	<Config Name="data" Target="/data/cache" Default="/mnt/user/appdata/gen-cache/data" Mode="rw" Description="Location to store the cached files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/gen-cache/data</Config>
+	<Config Name="Logs" Target="/data/logs" Default="/mnt/user/appdata/gen-cache/logs" Mode="rw" Description="Location to store the cache logs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/gen-cache/logs</Config>
+	<Config Name="Default Port" Target="80" Default="80" Mode="tcp" Description="Container Port: Must be 80!" Type="Port" Display="advanced" Required="true" Mask="false">80</Config>
+	<Config Name="CACHE_MEM_SIZE" Target="CACHE_MEM_SIZE" Default="500m" Mode="" Description="Memory size for the cache" Type="Variable" Display="advanced" Required="true" Mask="false">500m</Config>
+	<Config Name="CACHE_DISK_SIZE" Target="CACHE_DISK_SIZE" Default="500g" Mode="" Description="Max size for the cache" Type="Variable" Display="advanced" Required="true" Mask="false">500g</Config>
+	<Config Name="CACHE_MAX_AGE" Target="CACHE_MAX_AGE" Default="3650d" Mode="" Description="Max age for files in the cache" Type="Variable" Display="advanced" Required="true" Mask="false">3650d</Config>
+ </Container>
