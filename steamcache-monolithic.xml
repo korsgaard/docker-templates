@@ -10,7 +10,7 @@
   <Description></Description>
   <Overview></Overview>
   <Registry>https://hub.docker.com/r/steamcache/monolithic/~/dockerfile/</Registry>
-  <Repository>lancachenet/monolithic</Repository>
+  <Repository>steamcache/monolithic:latest</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
  <Environment>
