@@ -9,8 +9,8 @@
   <Support></Support>
   <Description></Description>
   <Overview></Overview>
-  <Registry>https://hub.docker.com/r/steamcache/monolithic/~/dockerfile/</Registry>
-  <Repository>steamcache/monolithic:latest</Repository>
+  <Registry>https://hub.docker.com/r/steamcache/monolithic/</Registry>
+  <Repository>steamcache/monolithic</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
  <Environment>
@@ -30,7 +30,7 @@
   </Environment>
 	<Network>bridge</Network>
 	<Networking>
-		<Mode>bridge</Mode>
+		<Mode>custom</Mode>
 		<Publish>
 			<Port>
 				<HostPort>80</HostPort>
